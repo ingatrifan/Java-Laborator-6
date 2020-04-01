@@ -16,9 +16,12 @@ public class MainFrame extends JFrame {
     private void init() {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         canvas = new DrawingPanel(this);
-
+        configPanel = new ConfigPanel(this);
+        controlPanel = new ControlPanel(this);
         add(canvas, BorderLayout.CENTER);
-
+        getContentPane().add(configPanel,BorderLayout.WEST);
+        getContentPane().add(controlPanel,BorderLayout.PAGE_START);
         pack();
+        setVisible(true);
     }
 }
